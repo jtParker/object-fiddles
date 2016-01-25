@@ -248,8 +248,9 @@ methodCollection.logHello();
 
   //Code Here
 var makePerson = function(name, birthday, ssn) {
-  var personInfo = {name, birthday, ssn};
-  return personInfo;
+this.name = name;
+this.birthday = birthday;
+this.ssn = ssn;
 }
 
 
@@ -261,8 +262,9 @@ var makePerson = function(name, birthday, ssn) {
 
   //Code Here
 var makeCard = function(cardNum, cardHolder, exp) {
-  var creditCard = {cardNum, cardHolder, exp};
-  return creditCard;
+  this.cardNum = cardNum;
+  this.cardHolder = cardHolder;
+  this.exp = exp;
 }
 
 
@@ -275,7 +277,10 @@ var makeCard = function(cardNum, cardHolder, exp) {
    Have bindCard merge the two parameters together into a new object which contains all the properties from the person as well as the creditcard.
 */
 var bindCard = function(name, card) {
-  var newCard = object.assign(newCard, name, card);
-  return newCard;
+  var newObj = {};
+  for (var key in name) {
+    newObj[key] = name[key];
+
+  }
 }
   //Code Here
